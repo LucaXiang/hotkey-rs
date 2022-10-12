@@ -9,6 +9,7 @@ use windows::Win32::UI::Input::KeyboardAndMouse::{
     RegisterHotKey, UnregisterHotKey, MOD_ALT, MOD_CONTROL,
 };
 
+#[cfg(target_os = "windows")]
 fn main() {
     let modifiers = MOD_CONTROL | MOD_ALT;
     unsafe {
