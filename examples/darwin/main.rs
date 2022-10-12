@@ -1,9 +1,14 @@
-#[cfg(not(target_os = "darwin"))]
-fn main() {
-    println!("please run this example on darwin");
-}
+#[cfg(not(target_os = "macos"))]
+mod no_support;
+#[cfg(not(target_os = "macos"))]
+pub use no_support::Utils;
 
-#[cfg(target_os = "darwin")]
+#[cfg(target_os = "macos")]
+mod support;
+#[cfg(target_os = "macos")]
+pub use support::Utils;
+
 fn main() {
-    println!("Hello World!");
+    Utils::register_hotkey();
+    Utils::unregister_hotkey();
 }

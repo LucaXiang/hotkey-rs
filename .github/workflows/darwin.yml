@@ -23,4 +23,4 @@ jobs:
       - name: Install cargo-llvm-cov
         uses: taiki-e/install-action@cargo-llvm-cov
       - name: Run Platform example
-        run: cargo run --example macos
+        run: cargo run --example darwin

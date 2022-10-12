@@ -18,21 +18,20 @@ anyhow = "1.0.65"
 
 
 
-[target.'cfg(linux)'.dev-dependencies]
-x11-dl = "2.20.0"
 
-[target.'cfg(windows)'.dev-dependencies]
+[target."cfg(target_os =\"windows\")".dev-dependencies]
 windows = { version = "0.42.0", features = [
     "Win32_Foundation",
     "Win32_UI_WindowsAndMessaging",
     "Win32_UI_Input_KeyboardAndMouse"] }
 
 
+[target."cfg(target_os =\"linux\")".dev-dependencies]
+x11-dl = "2.20.0"
+
 [[example]]
 name = "windows"
 path = "examples/windows/main.rs"
-
-
 
 [[example]]
 name = "linux"
